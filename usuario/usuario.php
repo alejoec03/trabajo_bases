@@ -1,26 +1,17 @@
-!
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-            <meta content="width=device-width, initial-scale=1" name="viewport">
-                <title>
-                    Usuario
-                </title>
-                <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" rel="stylesheet">
-                </link>
-            </meta>
-        </meta>
-    </head>
-    <body style="background-color: #f4f4f4;">
-        <div class="container">
-            <div class="row">
+<?php
+include "../includes/header.php";
+?>
+
+
+<h1 class="mt-3">Entidad análoga a CLIENTE (USUARIO)</h1>
+
+<div class="row">
 
                 <div class="col-md-6 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
                     <table class="table">
                         <thead>
                             <tr>
-                            	<th scope="col">
+                                <th scope="col">
                                     ID
                                 </th>
                                 <th scope="col">
@@ -33,7 +24,7 @@
                                     Telefono
                                 </th>
                                 <th scope="col">
-                                    Valor*
+                                    Saldo
                                 </th>
                             </tr>
                         </thead>
@@ -102,22 +93,28 @@
                     <hr>
 
                     <label class="form-label">Nombre</label>
-        			<input type="text" name="" class="form-control mb-2" placeholder="Ingrese el Nombre" required>
+                    <input type="text" name="" class="form-control mb-2" placeholder="Ingrese el Nombre" required>
 
-        			<label class="form-label">Correo</label>
-        			<input type="text" name="" class="form-control mb-2" placeholder="Ingrese el Correo" required>
+                    <label class="form-label">Correo</label>
+                    <input type="text" name="" class="form-control mb-2" placeholder="Ingrese el Correo" required>
 
-        			<label class="form-label">Telefono</label>
-        			<input type="text" name="" class="form-control mb-2" placeholder="Ingrese el Telefono" required>
+                    <label class="form-label">Telefono</label>
+                    <input type="text" name="" class="form-control mb-2" placeholder="Ingrese el Telefono" required>
 
-        			<label class="form-label">Valor</label>
-        			<input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Valor" required>
+                    <label class="form-label">Saldo</label>
+                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Saldo" required>
 
-        			<button type="button" class="btn btn-primary form-control mt-2">Añadir</button>
+                    <button type="button" class="btn btn-primary form-control mt-2">Añadir</button>
                 
                 </div>
 
             </div>
-        </div>
-    </body>
-</html>
+
+
+
+<?php
+
+
+include "../includes/footer.php";
+?>
+

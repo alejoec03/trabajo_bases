@@ -1,28 +1,89 @@
-!
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-            <meta content="width=device-width, initial-scale=1" name="viewport">
-                <title>
-                    Inmueble
-                </title>
-                <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" rel="stylesheet">
-                </link>
-            </meta>
-        </meta>
+<?php
+include "../includes/header.php";
+?>
 
+<h1 class="mt-3">Entidad análoga a CASILLERO (INMUEBLE)</h1>
 
-    </head>
-    <body style="background-color: #f4f4f4;">
-        <div class="container">
-            <div class="row custom-row">
+<!-- FORMULARIO. Cambiar los campos de acuerdo a su trabajo -->
 
-                <div class="col-lg-7 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
+            <div class="row">
+                
+                <div class="col-lg-12 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
+
+                    <h2>
+                        Añadir Inmueble
+                    </h2>
+
+                    <hr>
+
+                    <label class="form-label">Tipo</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value= "0"selected>Seleccione uno</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Apartamento">Apartamento</option>
+                        <option value="Oficina">Oficina</option>
+                        <option value="Apartaestudio">Apartaestudio</option>
+                        <option value="Bodega">Bodega</option>
+                        <option value="Lote">Lote</option>
+                        <option value="Complejo">Complejo Industrial</option>
+                        <option value="Almacen">Almacen</option>
+                        <option value="Edificio">Edificio</option>
+                    </select>
+
+                    <label class="form-label">Area</label>
+                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Area" required>
+
+                    <label class="form-label">Direccion</label>
+                    <input type="text" name="" class="form-control mb-2" placeholder="Ingrese la Direccion" required>
+
+                    <label class="form-label">Estado</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value= "0"selected>Seleccione uno</option>
+                        <option value="Disponible">Disponible</option>
+                        <option value="No Disponible">No Disponible</option>
+                    </select>
+
+                    <label class="form-label">Estrato</label>
+                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Estrato" required>
+
+                    <label class="form-label">Precio</label>
+                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Precio" required>
+
+                    <label class="form-label">Numero de Habitaciones</label>
+                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Numero" required>
+
+                    <label class="form-label">Numero de Baños</label>
+                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Numero" required>
+
+                    <label class="form-label">Cedula del Dueño</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value= "0"selected>Seleccione una</option>
+                        <option value="1001">1001</option>
+                        <option value="1002">1002</option>
+                        <option value="1003">1003</option>
+                    </select>
+
+                    <label class="form-label">Cedula del Ocupante*</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option value= "0"selected>Seleccione una</option>
+                        <option value="1001">1001</option>
+                        <option value="1002">1002</option>
+                        <option value="1003">1003</option>
+                    </select>
+
+                    <button type="button" class="btn btn-primary form-control mt-2">Añadir</button>
+                
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-12 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
                     <table class="table">
                         <thead>
                             <tr>
-                            	<th scope="col">
+                                <th scope="col">
                                     ID
                                 </th>
                                 <th scope="col">
@@ -144,77 +205,12 @@
                     </table>
                 </div>
 
-                <div class="col-lg-4 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
-
-                    <h2>
-                        Añadir Inmueble
-                    </h2>
-
-                    <hr>
-
-                    <label class="form-label">Tipo</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value= "0"selected>Seleccione uno</option>
-                        <option value="Casa">Casa</option>
-                        <option value="Apartamento">Apartamento</option>
-                        <option value="Oficina">Oficina</option>
-                        <option value="Apartaestudio">Apartaestudio</option>
-                        <option value="Bodega">Bodega</option>
-                        <option value="Lote">Lote</option>
-                        <option value="Complejo">Complejo Industrial</option>
-                        <option value="Almacen">Almacen</option>
-                        <option value="Edificio">Edificio</option>
-                    </select>
-
-        			<label class="form-label">Area</label>
-        			<input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Area" required>
-
-        			<label class="form-label">Direccion</label>
-        			<input type="text" name="" class="form-control mb-2" placeholder="Ingrese la Direccion" required>
-
-        			<label class="form-label">Estado</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value= "0"selected>Seleccione uno</option>
-                        <option value="Disponible">Disponible</option>
-                        <option value="No Disponible">No Disponible</option>
-                    </select>
-
-        			<label class="form-label">Estrato</label>
-        			<input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Estrato" required>
-
-                    <label class="form-label">Precio</label>
-                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Precio" required>
-
-                    <label class="form-label">Numero de Habitaciones</label>
-                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Numero" required>
-
-                    <label class="form-label">Numero de Baños</label>
-                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Numero" required>
-
-                    <label class="form-label">Cedula del Dueño</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value= "0"selected>Seleccione una</option>
-                        <option value="1001">1001</option>
-                        <option value="1002">1002</option>
-                        <option value="1003">1003</option>
-                    </select>
-
-                    <label class="form-label">Cedula del Ocupante*</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value= "0"selected>Seleccione una</option>
-                        <option value="1001">1001</option>
-                        <option value="1002">1002</option>
-                        <option value="1003">1003</option>
-                    </select>
-
-        			<button type="button" class="btn btn-primary form-control mt-2">Añadir</button>
                 
-                </div>
 
             </div>
-        </div>
 
-        
+<?php
 
-    </body>
-</html>
+
+include "../includes/footer.php";
+?>
