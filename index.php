@@ -45,10 +45,8 @@
         <ul>
             <li><a href="usuario/usuario.php">Entidad análoga a CLIENTE (USUARIO)</a></li>
             <li><a href="inmueble/inmueble.php">Entidad análoga a CASILLERO (INMUEBLE)</a></li>
-            <li><a href="consultas/consulta1.php">Consulta 1</a></li>
-            <li><a href="consultas/consulta2.php">Consulta 2</a></li>
-            <li><a href="busqueda/busqueda1.php">Búsqueda 1</a></li>
-            <li><a href="busqueda/busqueda2.php">Búsqueda 2</a></li>
+            <li><a href="consultas/consultas.php">Consultas</a></li>
+            <li><a href="busqueda/busquedas.php">Búsquedas</a></li>
         </ul>
     </div>
 </div>

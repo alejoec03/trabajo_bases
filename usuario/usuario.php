@@ -7,7 +7,7 @@ include "../includes/header.php";
 
 <div class="row">
 
-                <div class="col-md-6 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
+                <div class="col-md-7 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
                     <table class="table">
                         <thead>
                             <tr>
@@ -84,7 +84,7 @@ include "../includes/header.php";
                     </table>
                 </div>
 
-                <div class="col-md-5 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
+                <div class="col-md-4 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
 
                     <h2>
                         Añadir Usuario

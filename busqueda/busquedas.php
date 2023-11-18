@@ -1,38 +1,17 @@
-!
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-            <meta content="width=device-width, initial-scale=1" name="viewport">
-                <title>
-                    Consultas
-                </title>
-                <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" rel="stylesheet">
-                </link>
-            </meta>
-        </meta>
-    </head>
-    <body style="background-color: #f4f4f4;">
-        <div class="container">
-            <div class="row">
+<?php
+include "../includes/header.php";
+?>
 
-                <div class="col-md-2"></div>
-                <div class="col-md-8  p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
+<!-- TÍTULO. Cambiarlo, pero dejar especificada la analogía -->
+<h1 class="mt-3">Búsquedas</h1>
 
-                    <div class="container"> 
+<div class="row">
 
-                        <a href="" class="btn btn-primary m-2">Mostrar todo</a>
-                        <a href="" class="btn btn-primary m-2">Boton 1</a>
-                        <a href="" class="btn btn-primary m-2">Boton 2</a>
-
-                    </div>
-
-                    <hr>
-
+                <div class="col-md-8 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
                     <table class="table">
                         <thead>
                             <tr>
-                            	<th scope="col">
+                                <th scope="col">
                                     ID
                                 </th>
                                 <th scope="col">
@@ -104,9 +83,37 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2"></div>
+
+                <div class="col-md-3 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
+
+                    
+
+                    <h4>Busqueda 1</h4>
+
+                    <label class="form-label">Cedula del Usuario</label>
+                    <input type="text" name="" class="form-control mb-2" placeholder="Ingrese la Cedula" required>
+                    <button type="button" class="btn btn-primary form-control mt-2">Buscar</button>
+
+                    <hr>
+
+                    <h4>Busqueda 2</h4>
+
+                    <label class="form-label">Fecha 1</label>
+                    <input type="date" name="" class="form-control mb-2"  required>
+
+                    <label class="form-label">Fecha 2</label>
+                    <input type="date" name="" class="form-control mb-2" required>
+
+                    <label class="form-label">Zona</label>
+                    <input type="text" name="" class="form-control mb-2" placeholder="Ingrese la Zona" required>
+
+                    <button type="button" class="btn btn-primary form-control mt-2">Buscar</button>
+                
+                </div>
 
             </div>
-        </div>
-    </body>
-</html>
+
+<?php
+
+include "../includes/footer.php";
+?>
