@@ -24,6 +24,9 @@ include "../includes/header.php";
                                     Telefono
                                 </th>
                                 <th scope="col">
+                                    Tipo
+                                </th>
+                                <th scope="col">
                                     Saldo
                                 </th>
                             </tr>
@@ -43,6 +46,9 @@ include "../includes/header.php";
                                     3013234959
                                 </td>
                                 <td>
+                                    Persona natural
+                                </td>
+                                <td>
                                     300
                                 </td>
                             </tr>
@@ -58,6 +64,9 @@ include "../includes/header.php";
                                 </td>
                                 <td>
                                     3013234959
+                                </td>
+                                <td>
+                                    Persona natural
                                 </td>
                                 <td>
                                     300
@@ -77,6 +86,9 @@ include "../includes/header.php";
                                     3013234959
                                 </td>
                                 <td>
+                                    Persona natural
+                                </td>
+                                <td>
                                     300
                                 </td>
                             </tr>
@@ -85,7 +97,7 @@ include "../includes/header.php";
                 </div>
 
                 <div class="col-md-4 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
-
+                    <form action="usuario_insert.php" method="post">
                     <h2>
                         Añadir Usuario
                     </h2>
@@ -93,19 +105,28 @@ include "../includes/header.php";
                     <hr>
 
                     <label class="form-label">Nombre</label>
-                    <input type="text" name="" class="form-control mb-2" placeholder="Ingrese el Nombre" required>
+                    <input type="text" id="nombre" name="nombre" class="form-control mb-2" placeholder="Ingrese el Nombre" required>
 
                     <label class="form-label">Correo</label>
-                    <input type="text" name="" class="form-control mb-2" placeholder="Ingrese el Correo" required>
+                    <input type="text" id="correo" name="correo" class="form-control mb-2" placeholder="Ingrese el Correo" required>
 
                     <label class="form-label">Telefono</label>
-                    <input type="text" name="" class="form-control mb-2" placeholder="Ingrese el Telefono" required>
+                    <input type="text" id="telefono" name="telefono" class="form-control mb-2" placeholder="Ingrese el Telefono" required>
+
+                    <label class="form-label">Tipo</label>
+                    <select class="form-select" aria-label="Default select example" id="tipo" name="tipo">
+                        <option value= "0"selected>Seleccione uno</option>
+                        <option value="Persona natural">Persona natural</option>
+                        <option value="Persona juridica">Persona juridica</option>
+                    </select>
 
                     <label class="form-label">Saldo</label>
-                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Saldo" required>
+                    <input type="number" id="saldo" name="saldo" class="form-control mb-2" placeholder="Ingrese el Saldo" required>
 
-                    <button type="button" class="btn btn-primary form-control mt-2">Añadir</button>
-                
+                    <button type="submit" class="btn btn-primary form-control mt-2">Añadir</button>
+                    
+                    </form>
+
                 </div>
 
             </div>

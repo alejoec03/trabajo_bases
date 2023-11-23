@@ -1,0 +1,26 @@
+CREATE TABLE usuario (
+    codigo INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL,
+    correo VARCHAR(255) UNIQUE NOT NULL,
+    telefono VARCHAR(15) UNIQUE NOT NULL,
+    saldo DECIMAL(10, 2) NOT NULL,
+    tipo VARCHAR(255) NOT NULL CHECK (tipo IN ('Persona natural', 'Persona juridica'))
+);
+
+CREATE TABLE inmueble (
+    codigo INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    tipo VARCHAR(20) NOT NULL CHECK (tipo IN ('casa', 'apartamento', 'apartaestudio', 'oficina', 'bodega', 'lote', 'complejo industrial', 'almacén', 'edificio')),
+    area DECIMAL(10, 2) NOT NULL,
+    direccion VARCHAR(255) NOT NULL,
+    estado VARCHAR(20) NOT NULL CHECK (estado IN ('disponible', 'no disponible')),
+    estrato INT,
+    numero_habitaciones INT,
+    numero_banos INT,
+    precio DECIMAL(10, 2) NOT NULL,
+    pais VARCHAR(50) NOT NULL,
+    fecha_construccion DATE NOT NULL,
+    cod_dueno INT,
+    cod_ocupante INT,
+    FOREIGN KEY (cod_dueno) REFERENCES usuario(codigo),
+    FOREIGN KEY (cod_ocupante) REFERENCES usuario(codigo)
+);
