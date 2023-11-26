@@ -9,7 +9,7 @@ include "../includes/header.php";
             <div class="row">
                 
                 <div class="col-lg-12 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
-
+                    <form action="inmueble_insert.php" method="post">
                     <h2>
                         Añadir Inmueble
                     </h2>
@@ -20,7 +20,7 @@ include "../includes/header.php";
                         
                         <div class="form-group col-md-4">
                             <label class="form-label">Tipo</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" id="tipo" name="tipo">
                                 <option value= "0"selected>Seleccione uno</option>
                                 <option value="casa">casa</option>
                                 <option value="apartamento">apartamento</option>
@@ -36,12 +36,12 @@ include "../includes/header.php";
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Area</label>
-                            <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Area" required>
+                            <input type="number" class="form-control mb-2" placeholder="Ingrese el Area" id="area" name="area" required>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Direccion</label>
-                            <input type="text" name="" class="form-control mb-2" placeholder="Ingrese la Direccion" required>
+                            <input type="text" class="form-control mb-2" placeholder="Ingrese la Direccion" id="direccion" name="direccion" required>
                         </div>
 
                     </div>
@@ -50,21 +50,21 @@ include "../includes/header.php";
                         
                         <div class="form-group col-md-4">
                             <label class="form-label">Estado</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value= "0"selected>Seleccione uno</option>
-                        <option value="disponible">disponible</option>
-                        <option value="no disponible">no disponible</option>
-                    </select>
+                            <select class="form-select" aria-label="Default select example" id="estado" name="estado">
+                                <option value= "0"selected>Seleccione uno</option>
+                                <option value="disponible">disponible</option>
+                                <option value="no disponible">no disponible</option>
+                            </select>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Estrato</label>
-                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Estrato" required>
+                    <input type="number" class="form-control mb-2" placeholder="Ingrese el Estrato" id="estrato" name="estrato">
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Precio</label>
-                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Precio" required>
+                    <input type="number" class="form-control mb-2" placeholder="Ingrese el Precio" id="precio" name="precio" required>
                         </div>
 
                     </div>
@@ -73,18 +73,28 @@ include "../includes/header.php";
                         
                         <div class="form-group col-md-4">
                             <label class="form-label">Numero de Habitaciones</label>
-                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Numero" required>
+                    <input type="number" class="form-control mb-2" placeholder="Ingrese el Numero" id="habitaciones" name="habitaciones">
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Numero de Baños</label>
-                    <input type="number" name="" class="form-control mb-2" placeholder="Ingrese el Numero" required>
+                    <input type="number" class="form-control mb-2" placeholder="Ingrese el Numero" id="banos" name="banos">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label class="form-label">País</label>
+                            <input type="text" class="form-control mb-2" placeholder="Ingrese el País" id="pais" name="pais" required>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label class="form-label">Fecha de Construccion</label>
+                            <input type="date" class="form-control mb-2" placeholder="Ingrese el País" id="fecha" name="fecha" required>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Código del Dueño</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value= "0"selected>Seleccione una</option>
+                    <select class="form-select" aria-label="Default select example" id="dueno" name="dueno">
+                        <option value= "NULL"selected>Seleccione una</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -97,9 +107,9 @@ include "../includes/header.php";
                         
 
                         <div class="form-group col-md-4">
-                            <label class="form-label">Código del Ocupante*</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value= "0"selected>Seleccione una</option>
+                            <label class="form-label">Código del Ocupante</label>
+                    <select class="form-select" aria-label="Default select example" id="ocupante" name="ocupante">
+                        <option value= "NULL"selected>Seleccione una</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -107,12 +117,11 @@ include "../includes/header.php";
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label for=""></label>
-                            <button type="button" class="btn btn-primary form-control mt-2">Añadir</button>
+                            <button type="submit" class="btn btn-primary form-control mt-2">Añadir</button>
                         </div>
 
                     </div>
-
+                    </form>
                 </div>
 
             </div>
@@ -145,13 +154,13 @@ if($resultadoC1 and $resultadoC1->num_rows > 0):
             <tr>
                 <th scope="col" class="text-center">Código</th>
                 <th scope="col" class="text-center">Tipo</th>
-                <th scope="col" class="text-center">'Área'</th>
+                <th scope="col" class="text-center">Área</th>
                 <th scope="col" class="text-center">Dirección</th>
                 <th scope="col" class="text-center">Estado</th>
                 <th scope="col" class="text-center">Estrato</th>
                 <th scope="col" class="text-center">#Habitaciones</th>
                 <th scope="col" class="text-center">#Baños</th>
-                <th scope="col" class="text-center">'Precio'</th>
+                <th scope="col" class="text-center">Precio</th>
                 <th scope="col" class="text-center">País</th>
                 <th scope="col" class="text-center">Fecha de Construcción</th>
                 <th scope="col" class="text-center">Código Dueño</th>
