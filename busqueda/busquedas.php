@@ -7,7 +7,7 @@ include "../includes/header.php";
 
 <div class="row">
 
-                <div class="col-md-8 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
+                <div class="col-md-9 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
                     <?php
                         if (isset($_GET['action'])) {
                         $action = $_GET['action'];
@@ -71,8 +71,8 @@ include "../includes/header.php";
                         }
                         ?>
                     <?php if(isset($_GET['action']) and $action==1): ?>
-                    <table class="table">
-                        <thead>
+                    <table class="table table-striped table-bordered bg-white">
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="col">
                                     Codigo
@@ -102,8 +102,8 @@ include "../includes/header.php";
                 <?php endif; ?>
 
                 <?php if(isset($_GET['action']) and $action==2): ?>
-                    <table class="table">
-                        <thead>
+                    <table class="table table-striped table-bordered bg-white">
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="col">
                                     ID
@@ -187,7 +187,7 @@ include "../includes/header.php";
                 <?php endif; ?>
                 </div>
 
-                <div class="col-md-3 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
+                <div class="col-md-2 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
 
                     
 
@@ -197,7 +197,7 @@ include "../includes/header.php";
 
                     <label class="form-label">Codigo del Usuario</label>
                     <input type="text" id="codigo" name="codigo" class="form-control mb-2" placeholder="Ingrese la Cedula" required>
-                    <button type="submit" class="btn btn-primary form-control mt-2">Buscar</button>
+                    <button type="submit" class="btn btn-dark form-control mt-2">Buscar</button>
                     </form>
                     <hr>
 
@@ -214,7 +214,7 @@ include "../includes/header.php";
                     <label class="form-label">Zona</label>
                     <input type="text" id="zona" name="zona" class="form-control mb-2" placeholder="Ingrese la Zona" required>
 
-                    <button type="submit" class="btn btn-primary form-control mt-2">Buscar</button>
+                    <button type="submit" class="btn btn-dark form-control mt-2">Buscar</button>
                     </form>
                 </div>
 

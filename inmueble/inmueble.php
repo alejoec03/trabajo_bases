@@ -143,7 +143,7 @@ include "../includes/header.php";
                         
                         <div class="form-group col-md-4">
                             <label for=""></label>
-                            <button type="submit" class="btn btn-primary form-control mt-2">Añadir</button>
+                            <button type="submit" class="btn btn-dark form-control mt-2">Añadir</button>
                         </div>
 
                     </div>
@@ -167,7 +167,7 @@ include "../includes/header.php";
 
             <div class="row">
 
-                <div class="col-lg-12 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
+                <div class="col-lg-12 tabla mt-3 rounded-3 overflow-hidden" >
                     <?php
                     // Importar el código del otro archivo
                     require("inmueble_select.php");
@@ -177,8 +177,8 @@ include "../includes/header.php";
                     ?>
 
 
-                    <table class="table">
-                        <thead>
+                    <table class="table table-striped table-bordered bg-white">
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="col">
                                     ID
