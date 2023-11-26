@@ -11,7 +11,7 @@ $tipo = $_POST["tipo"];
 $saldo = floatval($_POST["saldo"]);
 
 // Query SQL a la BD. Si tienen que hacer comprobaciones, hacerlas acá (Generar una query diferente para casos especiales)
-$query = "INSERT INTO usuario (nombre, correo, telefono, tipo, saldo) VALUES ('$nombre', '$correo', '$telefono', '$tipo', $saldo)";
+$query = "INSERT INTO `usuario` (`nombre`, `correo`, `telefono`, `saldo`, `tipo`) VALUES ('$nombre', '$correo', '$telefono', $saldo, '$tipo')";
 
 // Ejecutar consulta
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));

@@ -6,11 +6,11 @@ include "../includes/header.php";
 <h1 class="mt-3">Consulta 2</h1>
 
 <p class="mt-3">
-    Sea sumavalor la suma de los valores de todos los proyectos asociados con un cliente.
-    El segundo botón debe mostrar el código y el valor de cada uno de los proyectos 
-    que cumple todas las siguientes condiciones: tiene un valor mayor que el 
-    presupuesto de la empresa que lo revisa y además el cliente que lo revisa es el 
-    gerente de la empresa que lo revisa.
+    mostrar la cédula, el nombre y el número de
+    casilleros que posee cada cliente que cumple las siguientes dos condiciones
+    (debe cumplir ambas condiciones para ser impreso): 
+    i) tiene todos sus casilleros en un mismo país 
+    ii) debe tener al menos tres casilleros (o sea, deber tener 3, 4 o más casilleros).
 </p>
 
 <?php
@@ -18,7 +18,21 @@ include "../includes/header.php";
 require('../config/conexion.php');
 
 // Query SQL a la BD -> Crearla acá (No está completada, cambiarla a su contexto y a su analogía)
-$query = "SELECT codigo, valor FROM proyecto";
+$query = "SELECT
+`usuario`.`codigo`,
+`usuario`.`nombre`,
+COUNT(`inmueble`.`cod_dueno`) AS num_inmuebles
+FROM
+`usuario`
+INNER JOIN
+`inmueble`
+ON
+`usuario`.`codigo` = `inmueble`.`cod_dueno`
+GROUP BY
+`usuario`.`codigo`
+HAVING
+COUNT(DISTINCT `inmueble`.`pais`) = 1
+AND COUNT(`inmueble`.`cod_dueno`) >= 3;";
 
 // Ejecutar la consulta
 $resultadoC2 = mysqli_query($conn, $query) or die(mysqli_error($conn));
@@ -41,6 +55,7 @@ if($resultadoC2 and $resultadoC2->num_rows > 0):
             <tr>
                 <th scope="col" class="text-center">Cédula</th>
                 <th scope="col" class="text-center">Nombre</th>
+                <th scope="col" class="text-center">Cantidad de Inmuebles</th>
             </tr>
         </thead>
 
@@ -54,8 +69,9 @@ if($resultadoC2 and $resultadoC2->num_rows > 0):
             <!-- Fila que se generará -->
             <tr>
                 <!-- Cada una de las columnas, con su valor correspondiente -->
-                <td class="text-center"><?= $fila["cedula"]; ?></td>
+                <td class="text-center"><?= $fila["codigo"]; ?></td>
                 <td class="text-center"><?= $fila["nombre"]; ?></td>
+                <td class="text-center"><?= $fila["num_inmuebles"]; ?></td>
             </tr>
 
             <?php

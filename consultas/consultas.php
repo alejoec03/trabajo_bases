@@ -10,10 +10,8 @@ include "../includes/header.php";
                 <div class="col-md-12  p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
 
                     <div class="container"> 
-
-                        <a href="" class="btn btn-primary m-2">Mostrar todo</a>
-                        <a href="" class="btn btn-primary m-2">Boton 1</a>
-                        <a href="" class="btn btn-primary m-2">Boton 2</a>
+                        <a href="consulta1.php" class="btn btn-primary m-2">Boton 1</a>
+                        <a href="consulta2.php" class="btn btn-primary m-2">Boton 2</a>
 
                     </div>
 

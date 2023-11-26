@@ -1,8 +1,8 @@
 CREATE TABLE usuario (
     codigo INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(255) NOT NULL,
-    correo VARCHAR(255) UNIQUE NOT NULL,
-    telefono VARCHAR(15) UNIQUE NOT NULL,
+    correo VARCHAR(255) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
     saldo DECIMAL(10, 2) NOT NULL,
     tipo VARCHAR(255) NOT NULL CHECK (tipo IN ('Persona natural', 'Persona juridica'))
 );
@@ -24,3 +24,4 @@ CREATE TABLE inmueble (
     FOREIGN KEY (cod_dueno) REFERENCES usuario(codigo),
     FOREIGN KEY (cod_ocupante) REFERENCES usuario(codigo)
 );
+
