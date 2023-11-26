@@ -9,62 +9,62 @@ include "../includes/header.php";
             <div class="row">
                 
                 <div class="col-lg-12 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
-                    <form action="inmueble_insert.php" method="post">
+
                     <h2>
                         Añadir Inmueble
                     </h2>
 
                     <hr>
-
+                    <form action="inmueble_insert.php" method="post">
                     <div class="row">
                         
+
                         <div class="form-group col-md-4">
-                            <label class="form-label">Tipo</label>
+                            <label class="form-label" >Tipo</label>
                             <select class="form-select" aria-label="Default select example" id="tipo" name="tipo">
-                                <option value= "0"selected>Seleccione uno</option>
-                                <option value="casa">casa</option>
-                                <option value="apartamento">apartamento</option>
-                                <option value="apartaestudio">apartaestudio</option>
-                                <option value="oficina">oficina</option>
-                                <option value="bodega">bodega</option>
-                                <option value="lote">lote</option>
-                                <option value="complejo industrial">complejo industrial</option>
-                                <option value="almacén">almacén</option>
-                                <option value="edificio">edificio</option>
+                                <option value="Casa">Casa</option>
+                                <option value="Apartamento">Apartamento</option>
+                                <option value="Oficina">Oficina</option>
+                                <option value="Apartaestudio">Apartaestudio</option>
+                                <option value="Bodega">Bodega</option>
+                                <option value="Lote">Lote</option>
+                                <option value="Complejo">Complejo Industrial</option>
+                                <option value="Almacen">Almacen</option>
+                                <option value="Edificio">Edificio</option>
                             </select>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Area</label>
-                            <input type="number" class="form-control mb-2" placeholder="Ingrese el Area" id="area" name="area" required>
+                            <input type="number" id="area" name="area" class="form-control mb-2" placeholder="Ingrese el Area" required>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Direccion</label>
-                            <input type="text" class="form-control mb-2" placeholder="Ingrese la Direccion" id="direccion" name="direccion" required>
+                            <input type="text" id="direccion" name="direccion" class="form-control mb-2" placeholder="Ingrese la Direccion" required>
                         </div>
 
+                        
                     </div>
 
                      <div class="row">
                         
                         <div class="form-group col-md-4">
                             <label class="form-label">Estado</label>
-                            <select class="form-select" aria-label="Default select example" id="estado" name="estado">
-                                <option value= "0"selected>Seleccione uno</option>
-                                <option value="disponible">disponible</option>
-                                <option value="no disponible">no disponible</option>
-                            </select>
+                    <select class="form-select" aria-label="Default select example" id="estado" name="estado">
+                        <option value="Disponible">Disponible</option>
+                        <option value="No Disponible">No Disponible</option>
+                    </select>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Estrato</label>
-                    <input type="number" class="form-control mb-2" placeholder="Ingrese el Estrato" id="estrato" name="estrato">
+                    <input type="number" id="estrato" name="estrato" class="form-control mb-2" placeholder="Ingrese el Estrato" required>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Precio</label>
-                    <input type="number" class="form-control mb-2" placeholder="Ingrese el Precio" id="precio" name="precio" required>
+                    <input type="number" id="precio" name="precio" class="form-control mb-2" placeholder="Ingrese el Precio" required>
                         </div>
 
                     </div>
@@ -73,31 +73,32 @@ include "../includes/header.php";
                         
                         <div class="form-group col-md-4">
                             <label class="form-label">Numero de Habitaciones</label>
-                    <input type="number" class="form-control mb-2" placeholder="Ingrese el Numero" id="habitaciones" name="habitaciones">
+                    <input type="number" id="numero_habitaciones" name="numero_habitaciones" class="form-control mb-2" placeholder="Ingrese el Numero" required>
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Numero de Baños</label>
-                    <input type="number" class="form-control mb-2" placeholder="Ingrese el Numero" id="banos" name="banos">
+                    <input type="number" id="numero_banos" name="numero_banos" class="form-control mb-2" placeholder="Ingrese el Numero" required>
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label class="form-label">País</label>
-                            <input type="text" class="form-control mb-2" placeholder="Ingrese el País" id="pais" name="pais" required>
-                        </div>
+                            <label class="form-label">Codigo del Dueño</label>
+                    <select class="form-select" aria-label="Default select example" id="cod_dueno" name="cod_dueno">
+                        <option value= "0"selected>Ninguno</option>
+                        <?php
+                        // Importar el código del otro archivo
+                        require("usuario_select.php");
 
-                        <div class="form-group col-md-4">
-                            <label class="form-label">Fecha de Construccion</label>
-                            <input type="date" class="form-control mb-2" placeholder="Ingrese el País" id="fecha" name="fecha" required>
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label class="form-label">Código del Dueño</label>
-                    <select class="form-select" aria-label="Default select example" id="dueno" name="dueno">
-                        <option value= "NULL"selected>Seleccione una</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        // Verificar si llegan datos
+                        if($resultadoUsuario and $resultadoUsuario->num_rows > 0):
+                        ?>
+                        <?php
+                            // Iterar sobre los registros que llegaron
+                            foreach ($resultadoUsuario as $fila):
+                        ?>
+                        <option value="<?= $fila["codigo"]; ?>"><?= $fila["codigo"]; ?> - <?= $fila["nombre"]; ?></option>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
                     </select>
                         </div>
 
@@ -107,114 +108,175 @@ include "../includes/header.php";
                         
 
                         <div class="form-group col-md-4">
-                            <label class="form-label">Código del Ocupante</label>
-                    <select class="form-select" aria-label="Default select example" id="ocupante" name="ocupante">
-                        <option value= "NULL"selected>Seleccione una</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                            <label class="form-label">Codigo del Ocupante*</label>
+                    <select class="form-select" aria-label="Default select example" id="cod_ocupante" name="cod_ocupante">
+                        <option value= "0"selected>Ninguno</option>
+                        <?php
+                        // Verificar si llegan datos
+                        if($resultadoUsuario and $resultadoUsuario->num_rows > 0):
+                        ?>
+                        <?php
+                            // Iterar sobre los registros que llegaron
+                            foreach ($resultadoUsuario as $fila):
+                        ?>
+                        <option value="<?= $fila["codigo"]; ?>"><?= $fila["codigo"]; ?> - <?= $fila["nombre"]; ?></option>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
                     </select>
                         </div>
 
+                        
+
                         <div class="form-group col-md-4">
+                            <label class="form-label">Pais</label>
+                            <input type="text" id="pais" name="pais" class="form-control mb-2" placeholder="Ingrese el Pais" required>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label class="form-label">Fecha de Construccion</label>
+                            <input type="date" id="fecha_construccion" name="fecha_construccion" class="form-control mb-2" required>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        
+                        <div class="form-group col-md-4">
+                            <label for=""></label>
                             <button type="submit" class="btn btn-primary form-control mt-2">Añadir</button>
                         </div>
 
                     </div>
+
                     </form>
+                    
+
+                    
+
+      
+
+                    
+
+                    
+
+                    
+                
                 </div>
 
             </div>
 
-<?php
-// Crear conexión con la BD
-require('../config/conexion.php');
+            <div class="row">
 
-// Query SQL a la BD -> Crearla acá (No está completada, cambiarla a su contexto y a su analogía)
-$query = "SELECT * FROM `inmueble`;";
+                <div class="col-lg-12 m-2 p-3" style="background-color: #fff; border: solid #e3e4e5 1px; border-radius: 8px;">
+                    <?php
+                    // Importar el código del otro archivo
+                    require("inmueble_select.php");
 
-// Ejecutar la consulta
-$resultadoC1 = mysqli_query($conn, $query) or die(mysqli_error($conn));
+                    // Verificar si llegan datos
+                    if($resultadoInmueble and $resultadoInmueble->num_rows > 0):
+                    ?>
 
-mysqli_close($conn);
-?>
 
-<?php
-// Verificar si llegan datos
-if($resultadoC1 and $resultadoC1->num_rows > 0):
-?>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    ID
+                                </th>
+                                <th scope="col">
+                                    Tipo
+                                </th>
+                                <th scope="col">
+                                    Area
+                                </th>
+                                <th scope="col">
+                                    Direccion
+                                </th>
+                                <th scope="col">
+                                    Estado
+                                </th>
+                                <th scope="col">
+                                    Estrato
+                                </th>
+                                <th scope="col">
+                                    Precio
+                                </th>
+                                <th scope="col">
+                                    N. Habitaciones
+                                </th>
+                                <th scope="col">
+                                    N. Baños
+                                </th>
+                                <th scope="col">
+                                    Codigo Dueño
+                                </th>
+                                <th scope="col">
+                                    Codigo Ocupante
+                                </th>
+                                <th scope="col">
+                                    Fecha de Construccion
+                                </th>
+                                <th scope="col">
+                                    Pais
+                                </th>
 
-<!-- MOSTRAR LA TABLA. Cambiar las cabeceras -->
-<div class="tabla mt-5 mx-3 rounded-3 overflow-hidden">
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            // Iterar sobre los registros que llegaron
+                            foreach ($resultadoInmueble as $fila):
+                            ?>
+                            <tr>
+                                <th scope="row">
+                                    <?= $fila["codigo"]; ?>
+                                </th>
+                                <td>
+                                    <?= $fila["tipo"]; ?>
+                                </td>
+                                <td>
+                                    <?= $fila["area"]; ?>
+                                </td>
+                                <td>
+                                    <?= $fila["direccion"]; ?>
+                                </td> 
+                                <td>
+                                    <?= $fila["estado"]; ?>
+                                </td>
+                                <td>
+                                    <?= $fila["estrato"]; ?>
+                                </td>
+                                <td>
+                                    <?= $fila["precio"]; ?>
+                                </td>
+                                <td>
+                                    <?= $fila["numero_habitaciones"]; ?>
+                                </td>
+                                <td>
+                                    <?= $fila["numero_banos"]; ?>
+                                </td>
+                                <td>
+                                    <?= $fila["cod_dueno"]; ?>
+                                </td>
+                                <td>
+                                    <?= $fila["cod_ocupante"]; ?>
+                                </td> 
+                                <td>
+                                    <?= $fila["fecha_construccion"]; ?>
+                                </td> 
+                                <td>
+                                    <?= $fila["pais"]; ?>
+                                </td> 
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <?php endif; ?>
+                </div>
 
-    <table class="table table-striped table-bordered">
+                
 
-        <!-- Títulos de la tabla, cambiarlos -->
-        <thead class="table-dark">
-            <tr>
-                <th scope="col" class="text-center">Código</th>
-                <th scope="col" class="text-center">Tipo</th>
-                <th scope="col" class="text-center">Área</th>
-                <th scope="col" class="text-center">Dirección</th>
-                <th scope="col" class="text-center">Estado</th>
-                <th scope="col" class="text-center">Estrato</th>
-                <th scope="col" class="text-center">#Habitaciones</th>
-                <th scope="col" class="text-center">#Baños</th>
-                <th scope="col" class="text-center">Precio</th>
-                <th scope="col" class="text-center">País</th>
-                <th scope="col" class="text-center">Fecha de Construcción</th>
-                <th scope="col" class="text-center">Código Dueño</th>
-                <th scope="col" class="text-center">Código Ocupante</th>
-            </tr>
-        </thead>
-
-        <tbody>
-
-            <?php
-            // Iterar sobre los registros que llegaron
-            foreach ($resultadoC1 as $fila):
-            ?>
-
-            <!-- Fila que se generará -->
-            <tr>
-                <!-- Cada una de las columnas, con su valor correspondiente -->
-                <td class="text-center"><?= $fila["codigo"]; ?></td>
-                <td class="text-center"><?= $fila["tipo"]; ?></td>
-                <td class="text-center"><?= $fila["area"]; ?></td>
-                <td class="text-center"><?= $fila["direccion"]; ?></td>
-                <td class="text-center"><?= $fila["estado"]; ?></td>
-                <td class="text-center"><?= $fila["estrato"]; ?></td>
-                <td class="text-center"><?= $fila["numero_habitaciones"]; ?></td>
-                <td class="text-center"><?= $fila["numero_banos"]; ?></td>
-                <td class="text-center"><?= $fila["precio"]; ?></td>
-                <td class="text-center"><?= $fila["pais"]; ?></td>
-                <td class="text-center"><?= $fila["fecha_construccion"]; ?></td>
-                <td class="text-center"><?= $fila["cod_dueno"]; ?></td>
-                <td class="text-center"><?= $fila["cod_ocupante"]; ?></td>
-            </tr>
-
-            <?php
-            // Cerrar los estructuras de control
-            endforeach;
-            ?>
-
-        </tbody>
-
-    </table>
-</div>
-<!-- Mensaje de error si no hay resultados -->
-<?php
-else:
-?>
-
-<div class="alert alert-danger text-center mt-5">
-    No se encontraron resultados para esta consulta
-</div>
-<?php
-// Cerrar los estructuras de control
-endif;
-?>
-
+            </div>
 
 <?php
 
