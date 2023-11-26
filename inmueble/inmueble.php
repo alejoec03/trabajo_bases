@@ -59,7 +59,7 @@ include "../includes/header.php";
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Estrato</label>
-                    <input type="number" id="estrato" name="estrato" class="form-control mb-2" placeholder="Ingrese el Estrato" required>
+                    <input type="number" id="estrato" name="estrato" class="form-control mb-2" placeholder="Ingrese el Estrato">
                         </div>
 
                         <div class="form-group col-md-4">
@@ -73,12 +73,12 @@ include "../includes/header.php";
                         
                         <div class="form-group col-md-4">
                             <label class="form-label">Numero de Habitaciones</label>
-                    <input type="number" id="numero_habitaciones" name="numero_habitaciones" class="form-control mb-2" placeholder="Ingrese el Numero" required>
+                    <input type="number" id="numero_habitaciones" name="numero_habitaciones" class="form-control mb-2" placeholder="Ingrese el Numero">
                         </div>
 
                         <div class="form-group col-md-4">
                             <label class="form-label">Numero de Baños</label>
-                    <input type="number" id="numero_banos" name="numero_banos" class="form-control mb-2" placeholder="Ingrese el Numero" required>
+                    <input type="number" id="numero_banos" name="numero_banos" class="form-control mb-2" placeholder="Ingrese el Numero">
                         </div>
 
                         <div class="form-group col-md-4">

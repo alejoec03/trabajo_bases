@@ -211,8 +211,8 @@ include "../includes/header.php";
                     <label class="form-label">Fecha 2</label>
                     <input type="date" id="fecha2" name="fecha2" class="form-control mb-2" required>
 
-                    <label class="form-label">Zona</label>
-                    <input type="text" id="zona" name="zona" class="form-control mb-2" placeholder="Ingrese la Zona" required>
+                    <label class="form-label">Pais</label>
+                    <input type="text" id="zona" name="zona" class="form-control mb-2" placeholder="Ingrese el pais" required>
 
                     <button type="submit" class="btn btn-primary form-control mt-2">Buscar</button>
                     </form>
